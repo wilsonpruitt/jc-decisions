@@ -9,6 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -38,6 +39,18 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-navy: var(--navy);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-cream: var(--cream);
+  --color-outcome-affirmed: var(--outcome-affirmed);
+  --color-outcome-reversed: var(--outcome-reversed);
+  --color-outcome-constitutional: var(--outcome-constitutional);
+  --color-outcome-unconstitutional: var(--outcome-unconstitutional);
+  --color-outcome-modified: var(--outcome-modified);
+  --color-outcome-remanded: var(--outcome-remanded);
+  --color-outcome-nojurisdiction: var(--outcome-nojurisdiction);
+  --color-outcome-moot: var(--outcome-moot);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -48,72 +61,55 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.58 0.22 27);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  /* Judicial palette */
+  --navy: #1a2744;
+  --gold: #b8923e;
+  --gold-light: #d4af5e;
+  --cream: #faf8f4;
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.87 0.00 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.371 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Outcome colors */
+  --outcome-affirmed: #2d6a4f;
+  --outcome-reversed: #9b2226;
+  --outcome-constitutional: #1d4e89;
+  --outcome-unconstitutional: #c44900;
+  --outcome-modified: #8a6d0b;
+  --outcome-remanded: #6a3d9a;
+  --outcome-nojurisdiction: #6b7280;
+  --outcome-moot: #9ca3af;
+
+  /* Shadcn tokens — warm cream base */
+  --background: #faf8f4;
+  --foreground: #1a2744;
+  --card: #ffffff;
+  --card-foreground: #1a2744;
+  --popover: #ffffff;
+  --popover-foreground: #1a2744;
+  --primary: #1a2744;
+  --primary-foreground: #faf8f4;
+  --secondary: #f0ece4;
+  --secondary-foreground: #1a2744;
+  --muted: #f0ece4;
+  --muted-foreground: #64748b;
+  --accent: #f0ece4;
+  --accent-foreground: #1a2744;
+  --destructive: #9b2226;
+  --border: #e2ddd3;
+  --input: #e2ddd3;
+  --ring: #b8923e;
+  --chart-1: #1d4e89;
+  --chart-2: #2d6a4f;
+  --chart-3: #b8923e;
+  --chart-4: #9b2226;
+  --chart-5: #6a3d9a;
+  --radius: 0.375rem;
+  --sidebar: #faf8f4;
+  --sidebar-foreground: #1a2744;
+  --sidebar-primary: #1a2744;
+  --sidebar-primary-foreground: #faf8f4;
+  --sidebar-accent: #f0ece4;
+  --sidebar-accent-foreground: #1a2744;
+  --sidebar-border: #e2ddd3;
+  --sidebar-ring: #b8923e;
 }
 
 @layer base {
@@ -126,4 +122,53 @@
   html {
     @apply font-sans;
   }
+}
+
+/* Subtle paper texture on cream backgrounds */
+.paper-texture {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
+}
+
+/* Gold decorative line */
+.gold-rule {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Outcome left-border accent on cards */
+.outcome-border-affirmed { border-left: 3px solid var(--outcome-affirmed); }
+.outcome-border-reversed { border-left: 3px solid var(--outcome-reversed); }
+.outcome-border-constitutional { border-left: 3px solid var(--outcome-constitutional); }
+.outcome-border-unconstitutional { border-left: 3px solid var(--outcome-unconstitutional); }
+.outcome-border-modified { border-left: 3px solid var(--outcome-modified); }
+.outcome-border-remanded { border-left: 3px solid var(--outcome-remanded); }
+.outcome-border-nojurisdiction { border-left: 3px solid var(--outcome-nojurisdiction); }
+.outcome-border-moot { border-left: 3px solid var(--outcome-moot); }
+
+/* Stagger animation for cards */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide-up {
+  animation: fadeSlideUp 0.4s ease-out both;
+}
+
+/* Hero pattern - subtle diagonal lines */
+.hero-pattern {
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(184, 146, 62, 0.04) 40px,
+      rgba(184, 146, 62, 0.04) 41px
+    );
 }
